@@ -15,6 +15,8 @@ from codequick import Listitem, Resolver, Route
 from kodi_six import xbmcgui
 import urlquick
 
+from resources.lib import resolver_proxy, web_utils
+
 from resources.lib.kodi_utils import get_kodi_version, get_selected_item_art, get_selected_item_label, get_selected_item_info, INPUTSTREAM_PROP
 from resources.lib.menu_utils import item_post_treatment
 
@@ -58,6 +60,8 @@ URL_LIVE = 'https://uktvplay.uktv.co.uk/watch-live/%s'
 URL_STREAM_LIVE = 'https://v2-streams-elb.simplestreamcdn.com/api/live/stream/%s?key=%s&platform=chrome&user=%s'
 # data_channel, key, user
 
+URL_DATA_BRIGHTCOVE = 'https://uktvplay.co.uk/_next/static/chunks/app/(navigation)/shows/[brand]/[series]/[episode]/[videoId]/page-af077c3ba4e5c8fe.js'
+
 URL_LIVE_KEY = 'https://mp.simplestream.com/uktv/1.0.4/ss.js'
 
 URL_LIVE_TOKEN = 'https://sctoken.uktvapi.co.uk/?stream_id=%s'
@@ -68,6 +72,8 @@ URL_LOGIN_TOKEN = 'https://s3-eu-west-1.amazonaws.com/uktv-static/fgprod/play/6f
 URL_LOGIN_MODAL = 'https://uktvplay.uktv.co.uk/account/'
 
 URL_COMPTE_LOGIN = 'https://live.mppglobal.com/api/accounts/authenticate/'
+
+GENERIC_HEADERS = {"User-Agent": web_utils.get_random_ua()}
 
 
 @Route.register
